@@ -17,7 +17,7 @@ export default function Ticket() {
     },
   })
 
-  if (ticket.isLoading) {
+  if (ticket.isPending) {
     return <p>Loading...</p>
   }
 
