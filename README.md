@@ -1,14 +1,14 @@
 # Flight Club
 
-![boarding-pass](/reference-imgs/boarding-pass.png)
+✈️ **Hack the Airlines** ✈️ is an airline company looking for developers to help them building an app for their customers and users. 
 
-**Hack the Airlines** is an airline company looking for developers to help them building an app for their customers and users. The main focus for this challenge is to write db functions and see the tests passing.
+The main focus for this challenge is to write database functions and see the tests passing.
 
 ## Learning Objectives
 
 - Entity Relationship Diagrams (ERDs)
 - Joins
-- Relationship contraints
+- Relationship constraints
 
 ## Install
 
@@ -34,7 +34,7 @@ Run the associated test file (`server/db/index.test.ts`)to see if your function 
 
 1. Complete the `getMyTickets` function.
 
-### 2. When I provide my 'dob' I should get a list of all of my tickets
+### 2. When I provide my 'dob' (date of birth) I should get a list of all of my tickets
 
 1. Complete the `getMyTicketsByDob` function.
 2. Note: The 'dob' being used is a 4 digit number representing the day and month
@@ -43,7 +43,7 @@ Run the associated test file (`server/db/index.test.ts`)to see if your function 
    This time you will need to join two tables to complete the task. You will need to do this more in future tasks.
   </details>
 
-### 3. When I provide my 'dob' I should get a list of all of my tickets
+### 3. When I provide my 'dob' I should get the total count of all my tickets
 
 1. Complete the `countMyTicketsByDob` function.
 2. Make sure you understand the shape of the data the test is looking for here.
