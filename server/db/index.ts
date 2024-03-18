@@ -11,8 +11,13 @@ export async function getMyTicketsByDob(dob: string) {
     .where('dob', dob)
 }
 
-export async function countMyTicketsByDob(dob: string) {}
-
+export async function countMyTicketsByDob(dob: string) {
+  return await db('passengers')
+    .join('tickets', 'passengers.id', 'tickets.passenger_id')
+    .where('dob', dob)
+    .count('* as count')
+    .first()
+}
 export async function countMyLostLuggage(dob: string) {}
 
 export async function sumMyLostLuggageWeight(dob: string) {}
