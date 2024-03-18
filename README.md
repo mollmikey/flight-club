@@ -91,6 +91,6 @@ Run the associated test file (`server/db/index.test.ts`)to see if your function 
 
 You can work on these user stories for homework, or if you finish early. You'll need to write your functions and tests from scratch for these tasks.
 
-### 1. For a given airport, list the phone numbers for all passengers who have lost their luggage so that the Airport staff can call them
+#### 1. For a given airport, list the phone numbers for all passengers who have lost their luggage so that the Airport staff can call them
 
-### 2. For a given airport, display the names and phone numbers for all passengers who own suspicious luggage
+#### 2. For a given airport, display the names and phone numbers for all passengers who own suspicious luggage
