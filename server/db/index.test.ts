@@ -16,14 +16,14 @@ beforeEach(async () => {
 afterAll(async () => {
   await connection.destroy()
 })
-
-test('1. List all my tickets by `id` ', async () => {
+//Pass
+test.skip('1. List all my tickets by `id` ', async () => {
   const myTickets = await flightDb.getMyTickets(1)
   expect(myTickets).toHaveLength(1)
   expect(myTickets[0].passenger_id).toBe(1)
 })
 
-test.skip('2. List all my tickets by `dob`', async () => {
+test('2. List all my tickets by `dob`', async () => {
   const myTickets = await flightDb.getMyTicketsByDob('9999')
   expect(myTickets).toHaveLength(1)
   expect(myTickets[0].fullname).toBe('test user')

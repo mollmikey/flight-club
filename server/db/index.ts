@@ -4,7 +4,12 @@ export async function getMyTickets(passengerId: number) {
   return await db('tickets').select().where('passenger_id', passengerId)
 }
 
-export async function getMyTicketsByDob(dob: string) {}
+export async function getMyTicketsByDob(dob: string) {
+  return await db('passengers')
+    .join('tickets', 'passengers.id', 'tickets.passenger_id')
+    .select()
+    .where('dob', dob)
+}
 
 export async function countMyTicketsByDob(dob: string) {}
 
