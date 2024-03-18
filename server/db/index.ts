@@ -1,6 +1,8 @@
 import db from './connection.ts'
 
-export async function getMyTickets(passengerId: number) {}
+export async function getMyTickets(passengerId: number) {
+  return await db('tickets').select().where('passenger_id', passengerId)
+}
 
 export async function getMyTicketsByDob(dob: string) {}
 
