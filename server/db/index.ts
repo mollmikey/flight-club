@@ -51,9 +51,21 @@ export async function getTicketsById(id: number) {
   console.log('hello')
 
   return await db('tickets')
-    .select()
+    .select(
+      'fullname as name',
+      'from.name as from',
+      'to.name as to',
+      'airplanes.model as carrier',
+      'tickets.passenger_id as seat',
+      'tickets.id as ticketNo',
+      'tickets.id as gate',
+      'departure_time as departure',
+      'arrival_time as arrival',
+      'tickets.flight_number as flightNo',
+    )
     .join('passengers', 'passengers.id', 'tickets.passenger_id')
-    .join('airports', 'airports.id', 'tickets.arrival_airport_id')
+    .join('airports as from', 'from.id', 'tickets.departure_airport_id')
+    .join('airports as to', 'to.id', 'tickets.arrival_airport_id')
     .join('airplanes', 'airplanes.id', 'tickets.airplane_id')
     .where('tickets.id', id)
     .first()
