@@ -37,4 +37,12 @@ export async function sumMyLostLuggageWeight(dob: string) {
     .first()
 }
 
-export async function getMyLostLuggageLocation(dob: string) {}
+export async function getMyLostLuggageLocation(dob: string) {
+  return await db('tickets')
+    .join('luggage', 'tickets.id', 'luggage.ticket_id')
+    .join('passengers', 'passengers.id', 'tickets.passenger_id')
+    .join('airports', 'airports.id', 'luggage.located_airport_id')
+    .where('dob', dob)
+    .andWhere('is_lost', true)
+    .first()
+}
