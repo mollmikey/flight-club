@@ -28,17 +28,16 @@ test.skip('2. List all my tickets by `dob`', async () => {
   expect(myTickets).toHaveLength(1)
   expect(myTickets[0].fullname).toBe('test user')
 })
-
-test('3. Count all my tickets given `passenger.dob', async () => {
+//Pass
+test.skip('3. Count all my tickets given `passenger.dob', async () => {
   const actual = await flightDb.countMyTicketsByDob('9999')
-  console.log(actual)
-
   expect(actual).not.toBeUndefined()
   expect(actual?.count).toBe(1)
 })
 
-test.skip('4. How many luggage have you lost?', async () => {
+test('4. How many luggage have you lost?', async () => {
   const actual = await flightDb.countMyLostLuggage('9999')
+  console.log(actual)
   expect(actual?.count).toBe(1)
 })
 
