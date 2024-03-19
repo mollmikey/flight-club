@@ -46,3 +46,15 @@ export async function getMyLostLuggageLocation(dob: string) {
     .andWhere('is_lost', true)
     .first()
 }
+
+export async function getTicketsById(id: number) {
+  console.log('hello')
+
+  return await db('tickets')
+    .select()
+    .join('passengers', 'passengers.id', 'tickets.passenger_id')
+    .join('airports', 'airports.id', 'tickets.arrival_airport_id')
+    .join('airplanes', 'airplanes.id', 'tickets.airplane_id')
+    .where('tickets.id', id)
+    .first()
+}
